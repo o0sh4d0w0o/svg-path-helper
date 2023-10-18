@@ -1,0 +1,28 @@
+{
+    "name": "svg-path-helper",
+    "version": "1.0.0",
+    "description": "Work in progress",
+    "main": "src/js/svg-path-helper.js",
+    "type": "module",
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/o0sh4d0w0o/svg-path-helper.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/o0sh4d0w0o/svg-path-helper/issues"
+    },
+    "homepage": "https://github.com/o0sh4d0w0o/svg-path-helper#readme",
+    "devDependencies": {
+        "@babel/preset-env": "^7.23.2",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-terser": "^0.4.4",
+        "rollup": "^4.1.4"
+    }
+}

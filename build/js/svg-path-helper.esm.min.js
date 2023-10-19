@@ -1,5 +1,5 @@
 /*
- * svg-path-helper.js v1.0.0
+ * svg-path-helper v1.0.0
  * Copyright © 2023 o0sh4d0w0o
  * Released under the MIT license
  * @copyright

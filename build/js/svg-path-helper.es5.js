@@ -1,11 +1,11 @@
 /*
- * svg-path-helper.js v1.0.0
+ * svg-path-helper v1.0.0
  * Copyright © 2023 o0sh4d0w0o
  * Released under the MIT license
  * @copyright
 */
-this["src/js/svg-path-helper"] = this["src/js/svg-path-helper"] || {};
-this["src/js/svg-path-helper"].js = (function () {
+this["svg-path-helper"] = this["svg-path-helper"] || {};
+this["svg-path-helper"].js = (function () {
   'use strict';
 
   function _iterableToArrayLimit(r, l) {

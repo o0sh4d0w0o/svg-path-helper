@@ -1,5 +1,5 @@
 /*
- * svg-path-helper.js v1.0.0
+ * svg-path-helper v1.0.0
  * Copyright © 2023 o0sh4d0w0o
  * Released under the MIT license
  * @copyright
@@ -7,7 +7,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, (global["src/js/svg-path-helper"] = global["src/js/svg-path-helper"] || {}, global["src/js/svg-path-helper"].js = factory()));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, (global["svg-path-helper"] = global["svg-path-helper"] || {}, global["svg-path-helper"].js = factory()));
 })(this, (function () { 'use strict';
 
     const SVG_NS = "http://www.w3.org/2000/svg";

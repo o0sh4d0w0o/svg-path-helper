@@ -5,8 +5,21 @@
     "main": "src/js/svg-path-helper.js",
     "type": "module",
     "scripts": {
+        "dev": "rollup -c -w",
         "build": "rollup -c",
-        "dev": "rollup -c -w"
+        "release": "zip -r build.zip build/"
+    },
+    "build": {
+        "input": {
+            "path": {
+                "js": "src/js/svg-path-helper.js",
+                "css": "src/css/svg-path-helper.css"
+            }
+        },
+        "output": {
+            "name": "svg-path-helper",
+            "path": "build/"
+        }
     },
     "repository": {
         "type": "git",
@@ -23,6 +36,7 @@
         "@babel/preset-env": "^7.23.2",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-terser": "^0.4.4",
-        "rollup": "^4.1.4"
+        "rollup": "^4.1.4",
+        "rollup-plugin-postcss": "^4.0.2"
     }
 }

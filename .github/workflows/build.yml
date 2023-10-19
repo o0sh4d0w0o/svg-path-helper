@@ -1,7 +1,10 @@
 name: Build
 on:
   push:
-    tags-ignore: '*'
+    branches:
+      - '**'
+    tags-ignore:
+      - '*'
 jobs:
   build:
     runs-on: ubuntu-latest

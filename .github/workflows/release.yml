@@ -4,12 +4,11 @@ on:
     tags:
       - 'v*'
 jobs:
+  build:
+    uses: ./.github/workflows/build.yml
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/build.yml
-      - name: Create build zip
-        run: npm run release
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

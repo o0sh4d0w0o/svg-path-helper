@@ -17,3 +17,5 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Create build zip
+        run: npm run release

@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "rollup -c -w",
         "build": "rollup -c",
-        "release": "zip -r build.zip build/"
+        "release": "npm run build && zip -r build.zip build/"
     },
     "build": {
         "input": {

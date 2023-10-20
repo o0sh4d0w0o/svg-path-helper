@@ -1,4 +1,4 @@
-import SVGPathHelper from "../../build/svg-path-helper.esm.min.js";
+import SVGPathHelper from "../../build/js/svg-path-helper.esm.min.js";
 
 const svgHelper = new SVGPathHelper();
 

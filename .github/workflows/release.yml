@@ -37,13 +37,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
+          path: gh-pages
       - name: Copy latest build to gh-pages
         run: |
-          cp -r build .
-          cp -r demo/* .
+          cd gh-pages
+          cp -r ../build .
+          cp -r ../demo/* .
       - name: Commit and push to gh-pages
         run: |
           git config user.name "GitHub Actions Bot"

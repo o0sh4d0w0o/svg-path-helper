@@ -45,6 +45,9 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
+      - name: Build demo folder for deployment
+        working-directory: base
+        run: npm run deploy
       - name: Copy latest build to gh-pages
         working-directory: gh-pages
         run: |

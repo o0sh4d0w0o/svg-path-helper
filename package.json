@@ -8,18 +8,24 @@
         "dev": "rollup -c -w",
         "build": "rollup -c",
         "zip": "cd ./build && zip -r ../build.zip * && cd ..",
-        "release": "npm run build && npm run zip"
+        "release": "npm run build && npm run zip",
+        "deploy": "cross-env MODE=deploy rollup -c"
     },
     "build": {
         "input": {
             "path": {
                 "js": "src/js/svg-path-helper.js",
-                "css": "src/css/svg-path-helper.css"
+                "css": "src/css/svg-path-helper.css",
+                "demoJs": "demo/js/main.js",
+                "demoCss": "demo/css/style.css"
             }
         },
         "output": {
             "name": "svg-path-helper",
-            "path": "build/"
+            "path": "build/",
+            "demoPath": "demo/",
+            "demoJSName": "main",
+            "demoCSSName": "style"
         }
     },
     "repository": {
@@ -37,7 +43,11 @@
         "@babel/preset-env": "^7.23.2",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-terser": "^0.4.4",
+        "cross-env": "^7.0.3",
         "rollup": "^4.1.4",
         "rollup-plugin-postcss": "^4.0.2"
+    },
+    "dependencies": {
+        "@rollup/plugin-replace": "^5.0.4"
     }
 }

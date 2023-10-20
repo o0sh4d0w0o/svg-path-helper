@@ -36,3 +36,18 @@ jobs:
           asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+      - name: Copy latest build to gh-pages
+        run: |
+          cp -r build .
+          cp -r demo/* .
+      - name: Commit and push to gh-pages
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<github-actions[bot]@noreply.github.com>"
+          git add .
+          git commit -m "Update gh-pages with latest build"
+          git push origin gh-pages

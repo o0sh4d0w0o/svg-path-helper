@@ -3,10 +3,9 @@ on:
   push:
     branches:
       - '**'
+      - '!gh-pages'
     tags-ignore:
-      - '*'
-    branches-ignore:
-      - 'gh-pages'
+      - '*'   
 jobs:
   build:
     runs-on: ubuntu-latest

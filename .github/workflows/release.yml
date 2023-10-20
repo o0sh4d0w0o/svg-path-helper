@@ -11,15 +11,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: base
-      - name: Change directory to base
-        run: cd base
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install Dependencies
+        working-directory: base
         run: npm install
       - name: Release
+        working-directory: base
         run: npm run release
       - name: Create Release
         id: release
@@ -35,24 +35,23 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.release.outputs.upload_url }}
-          asset_path: ./build.zip
+          asset_path: ./base/build.zip
           asset_name: build.zip
           asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Change directory to root
-        run: cd ..
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: gh-pages
       - name: Copy latest build to gh-pages
+        working-directory: gh-pages
         run: |
-          cd gh-pages
-          cp -r ../build .
-          cp -r ../demo/* .
+          cp -r ../base/build .
+          cp -r ../base/demo/* .
       - name: Commit and push to gh-pages
+        working-directory: gh-pages
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<github-actions[bot]@noreply.github.com>"

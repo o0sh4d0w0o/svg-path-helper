@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          path: base
+      - name: Change directory to base
+        run: cd base
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -36,6 +40,8 @@ jobs:
           asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Change directory to root
+        run: cd ..
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
